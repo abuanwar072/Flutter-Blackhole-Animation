@@ -81,7 +81,7 @@ class _CardsHandlerState extends State<_CardsHandler>
             onPressed: () async {
               holeAnimationController.forward();
               await cardOffsetAnimationController.forward();
-              Future.delayed(const Duration(milliseconds: 1200),
+              Future.delayed(const Duration(milliseconds: 200),
                   () => holeAnimationController.reverse());
             },
             child: const Icon(Icons.remove),
