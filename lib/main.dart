@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
 import 'dart:math';
+
+import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
@@ -97,49 +98,41 @@ class _CardsHandlerState extends State<_CardsHandler>
         ],
       ),
       body: Center(
-        child: ClipPath(
-          clipper: _BlackHoleClipper(),
-          child: Stack(
-            alignment: Alignment.bottomCenter,
-            clipBehavior: Clip.none,
-            children: [
-              SizedBox(
-                width: holeSize,
-                child: Image.asset(
-                  'images/hole.png',
-                  fit: BoxFit.fill,
+        child: SizedBox(
+          height: cardSize * 1.25,
+          width: double.infinity,
+          child: ClipPath(
+            clipper: _BlackHoleClipper(),
+            child: Stack(
+              alignment: Alignment.bottomCenter,
+              clipBehavior: Clip.none,
+              children: [
+                SizedBox(
+                  width: holeSize,
+                  child: Image.asset(
+                    'images/hole.png',
+                    fit: BoxFit.fill,
+                  ),
                 ),
-              ),
-              Positioned(
-                left: 0,
-                right: 0,
-                child: Center(
-                  child: Transform.translate(
-                    offset: Offset(0, cardOffset),
-                    child: Transform.rotate(
-                      angle: cardRotation,
-                      child: Padding(
-                        padding: const EdgeInsets.all(20.0),
-                        child: _Card(
-                          size: cardSize,
-                          elevation: cardElevation,
+                Positioned(
+                  child: Center(
+                    child: Transform.translate(
+                      offset: Offset(0, cardOffset),
+                      child: Transform.rotate(
+                        angle: cardRotation,
+                        child: Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: _Card(
+                            size: cardSize,
+                            elevation: cardElevation,
+                          ),
                         ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              Opacity(
-                opacity: 0,
-                child: SizedBox(
-                  width: cardSize * 1.5,
-                  child: Image.asset(
-                    'assets/images/hole.png',
-                    fit: BoxFit.fill,
-                  ),
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
@@ -152,7 +145,7 @@ class _BlackHoleClipper extends CustomClipper<Path> {
   Path getClip(Size size) {
     final path = Path();
     // Start from half the height at the left
-    path.moveTo(0, size.height / 2);
+    // path.moveTo(0, size.height / 2);
     // Go to half the height at the right passing through the bottom center
     // using an arc
     path.arcTo(
