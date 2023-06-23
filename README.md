@@ -2,8 +2,9 @@
 
 ## [Watch it on YouTube](https://youtu.be/pkFOobBYijc)
 
-You might already be familiar with creating basic animations in Flutter. But how about transforming these simple widgets into stunning animations? Let's dive in and discover how to make it happen,  starting with the impressive animation you can see below 👇
+Special thanks to [Louis](https://twitter.com/ldachet) for this fantastic animation!
 
+You might already be familiar with creating basic animations in Flutter. But how about transforming these simple widgets into stunning animations? Let's dive in and discover how to make it happen,  starting with the impressive animation you can see below 👇
 
 ![Preview](/preview.gif)
 
